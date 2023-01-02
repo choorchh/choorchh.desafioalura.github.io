@@ -1,0 +1,194 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    background-color: lightblue;
+    color: darkblue;
+    font-family:"Rubik Bubbles";
+    }
+.contenedor{
+    width: 95%;
+    max-width: 1200px;
+    min-height: 800px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 100px 1fr 50px 100px ;
+
+    grid-template-areas: "header header header"
+    "contenido contenido sidebar"
+    "widget1 widget1 widget2"
+    "footer footer footer";
+}
+.contenedor >div, 
+.contenedor .header,
+.contenedor .sidebar, 
+.contenedor .footer,
+.contenedor .contenido{
+    padding: 20px;
+    color: aliceblue;
+    background: lightblue;
+    border-radius: 4px;
+    
+}
+  .logo {
+    position: relative;
+left: 10px;
+top: 0;
+margin-top: 20px;
+margin-left: 20px;
+}
+.contenedor .header {
+   background: lightblue;
+   color: #0077b6;
+      text-shadow: hsl(239, 94%, 19%) 10px 10px 5px;
+   word-spacing: 3px;
+   font-size: 70px;
+   display: flex;
+    align-items: center;
+    justify-content: center;
+   /* grid-column-start: 1;
+   grid-column-end: -1; */
+   grid-area: header;
+}
+.contenedor .contenido{
+   min-height: 500px;
+    /* grid-column: span 2; */
+    grid-area: contenido;
+    display: flex ;
+    flex-wrap: wrap;
+    border: solid;
+    border-color: #0A3871;
+    border-radius: 6%;
+    background: #4682B4;
+}
+#texto-inicial{
+    width: auto;
+    height: 100%;
+    color:#87CEFA;
+    font-weight: bold;
+    font-size: 32px;
+    font-family:"Rubik Bubbles";
+    border: none;
+    outline: none;
+    background: #4682B4;
+    
+}
+.contenedor .sidebar{
+    /* grid-column: 3 / 4; */
+    background: #6495ED;
+    color: #0A3871;
+    text-align: center;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    align-items: auto;
+    grid-area: sidebar;
+    border: solid;
+    border-color: #0A3871;
+    border-radius: 6%;
+    text-align: center;
+}
+.contenedor #texto-final{
+    width: auto;
+    min-height: 200px;
+    color:#87CEFA;
+    font-weight: bold;
+    font-size: 32px;
+    border: none;
+    outline: none;
+    background: #6495ED;
+
+}
+.contenedor .widget1,
+.contenedor .widget2 {
+    background: lightblue ;
+    color: #fff;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-height: 100px;
+}
+.contenedor .widget1{
+    grid-area: widget1;
+}
+.contenedor .widget2{
+    grid-area: widget2;
+}
+#desencriptar {
+    padding: 25px;
+    width: 28%;
+    height: auto;
+    border-radius: 20px;
+    margin-left: 5%;
+    background-color: #0A3871;
+    color: white;
+    text-align: center;
+}
+#encriptar {
+    padding: 25px;
+    width: 26%;
+    height:auto;
+    border-radius: 20px;
+    margin-left: 5%;
+    background-color: #0A3871;
+    color: white;
+}
+#limpiar {
+    padding: 25px;
+    width: 26%;
+    height: auto;
+    border-radius: 20px;
+    margin-left: 5%;
+    color: white;
+    background-color: #0A3871;
+}
+#copiar, #intercambiar {
+     padding: 25px;
+     width: 26%;
+     height: auto;
+     background: #0A3871;
+     border-radius: 20px; 
+     color: white;
+ }
+#encriptar:hover, #desencriptar:hover, #limpiar:hover, #copiar:hover, #intercambiar:hover {
+    border-color: yellow;
+    border: solid;
+    color: yellow;
+    font-size: 20px;
+
+}
+.contenedor .footer{
+    background: lightblue;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    display: block;
+    justify-self: center;
+       /* grid-column: span 3; */
+    grid-area: footer;
+}
+/* @media screen and (max-width: 768px) {
+    .contenedor .contenido{
+        grid-column: 1/-1;
+            }
+    .contenedor .sidebar{
+        grid-column: 1/-1;
+    }
+    .contenedor .widget1{
+        grid-column: span 2;
+    }
+} */
+@media screen and (max-width 768px) {
+    .contenedor{
+    grid-template-areas: "header header header"
+    "contenido contenido contenido"
+    "sidebar sidebar sidebar"
+    "widget1 widget1 widget2 "
+    "footer footer footer";
+    }
+}
